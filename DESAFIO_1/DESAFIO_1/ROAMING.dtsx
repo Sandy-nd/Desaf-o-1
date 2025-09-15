@@ -1,0 +1,1962 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/13/2025 6:00:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-5OO3LR7T"
+  DTS:CreatorName="LAPTOP-5OO3LR7T\SanAl"
+  DTS:DTSID="{B5A1A32E-BEF4-4D28-BFEE-C92C12E7E0B6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="17418"
+  DTS:ObjectName="ROAMING"
+  DTS:PackageType="5"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{5B95AB61-5383-4462-9B0D-EFB71289CD35}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FlatFile_PorPais]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="CSV consolidado de facturación por país"
+      DTS:DTSID="{EFAA83F6-F05C-4F0B-984A-8D356C698321}"
+      DTS:ObjectName="FlatFile_PorPais">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="17418"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\SanAl\Desktop\UDB\Ciclo 3 - 2025\DATAWAREHOUSE Y MINERIA DE DATOS\Tarea 1\DESAFIO_SEPT\DESAFIO_1\Outputs\Consolidado_Por_Pais.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="País"
+              DTS:DTSID="{495AC4E5-E35C-430D-B6DE-E8C9F10CFE00}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Sales"
+              DTS:DTSID="{C1F01F8A-9610-41EF-A3BD-80780D255301}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Facturación "
+              DTS:DTSID="{538294C9-C3FF-4233-9EA6-33C0643B70A7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FlatFile_PorTipoCliente]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="CSV consolidado de facturación por país"
+      DTS:DTSID="{9DB130EE-DB52-495F-BEF4-6A351AE68726}"
+      DTS:ObjectName="FlatFile_PorTipoCliente">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="17418"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\SanAl\Desktop\UDB\Ciclo 3 - 2025\DATAWAREHOUSE Y MINERIA DE DATOS\Tarea 1\DESAFIO_SEPT\DESAFIO_1\Outputs\Consolidado_Por_TipoCliente.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo Cliente"
+              DTS:DTSID="{D0CDF135-6505-4A62-A19F-3295A2F748B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="14"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Sales"
+              DTS:DTSID="{670C2373-C78D-4CD6-BE6A-43F7C8E304E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Facturación"
+              DTS:DTSID="{60113AC5-1D2A-4A1C-9504-4546015BDA38}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OLEDB_Source_DB1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0DA769FD-0F52-4563-A946-A575B3EBFDF4}"
+      DTS:ObjectName="OLEDB_Source_DB1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-5OO3LR7T;Initial Catalog=db_roaming_costarica;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-ROAMING-{0DA769FD-0F52-4563-A946-A575B3EBFDF4}LAPTOP-5OO3LR7T.db_roaming_costarica;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OLEDB_Source_DB2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3197BC10-E064-4A3F-B243-4854E6C0B75A}"
+      DTS:ObjectName="OLEDB_Source_DB2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-5OO3LR7T;Initial Catalog=db_roaming_guatemala;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-ROAMING-{3197BC10-E064-4A3F-B243-4854E6C0B75A}LAPTOP-5OO3LR7T.db_roaming_guatemala;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OLEDB_Source_DB3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{149F6E95-34C7-4536-B2CB-8838437C7CCD}"
+      DTS:ObjectName="OLEDB_Source_DB3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-5OO3LR7T;Initial Catalog=db_roaming_honduras;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-ROAMING-{149F6E95-34C7-4536-B2CB-8838437C7CCD}LAPTOP-5OO3LR7T.db_roaming_honduras;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF_CONSOLIDADO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{61C59EDC-91D0-4E06-8E4C-480C0DC25104}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF_CONSOLIDADO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF_CONSOLIDADO\Cliente"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Cliente"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF_CONSOLIDADO\Cliente.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Cliente.Inputs[Aggregate Input 1].Columns[customer_type_trim]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="customer_type_trim"
+                      lineageId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[customer_type_trim]" />
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Cliente.Inputs[Aggregate Input 1].Columns[sale_id]"
+                      cachedDataType="i4"
+                      cachedName="sale_id"
+                      lineageId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_id]" />
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Cliente.Inputs[Aggregate Input 1].Columns[sale_amount_num]"
+                      cachedDataType="numeric"
+                      cachedName="sale_amount_num"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_amount_num]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_CONSOLIDADO\Cliente.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\Cliente.Outputs[Aggregate Output 1].Columns[customer_type_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF_CONSOLIDADO\Cliente.Outputs[Aggregate Output 1].Columns[customer_type_trim]"
+                      name="customer_type_trim">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[customer_type_trim]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\Cliente.Outputs[Aggregate Output 1].Columns[total_sales]"
+                      dataType="ui8"
+                      lineageId="Package\DF_CONSOLIDADO\Cliente.Outputs[Aggregate Output 1].Columns[total_sales]"
+                      name="total_sales">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\Cliente.Outputs[Aggregate Output 1].Columns[total_amount]"
+                      dataType="numeric"
+                      lineageId="Package\DF_CONSOLIDADO\Cliente.Outputs[Aggregate Output 1].Columns[total_amount]"
+                      name="total_amount"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_amount_num]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_CONSOLIDADO\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="17418"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_CONSOLIDADO\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FlatFile_PorPais]"
+                  connectionManagerRefId="Package.ConnectionManagers[FlatFile_PorPais]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF_CONSOLIDADO\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination.Inputs[Flat File Destination Input].Columns[country_name_trim]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="country_name_trim"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[País]"
+                      lineageId="Package\DF_CONSOLIDADO\País.Outputs[Aggregate Output 1].Columns[country_name_trim]" />
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination.Inputs[Flat File Destination Input].Columns[total_sales]"
+                      cachedDataType="ui8"
+                      cachedName="total_sales"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Sales]"
+                      lineageId="Package\DF_CONSOLIDADO\País.Outputs[Aggregate Output 1].Columns[total_sales]" />
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination.Inputs[Flat File Destination Input].Columns[total_amount]"
+                      cachedDataType="numeric"
+                      cachedName="total_amount"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Facturación ]"
+                      lineageId="Package\DF_CONSOLIDADO\País.Outputs[Aggregate Output 1].Columns[total_amount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[País]"
+                      codePage="1252"
+                      dataType="text"
+                      name="País" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Sales]"
+                      dataType="decimal"
+                      name="Total Sales" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Total Facturación ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Total Facturación " />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\DF_CONSOLIDADO\Flat File Destination 1"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="17418"
+              name="Flat File Destination 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_CONSOLIDADO\Flat File Destination 1.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FlatFile_PorTipoCliente]"
+                  connectionManagerRefId="Package.ConnectionManagers[FlatFile_PorTipoCliente]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF_CONSOLIDADO\Flat File Destination 1.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[customer_type_trim]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="customer_type_trim"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[Tipo Cliente]"
+                      lineageId="Package\DF_CONSOLIDADO\Cliente.Outputs[Aggregate Output 1].Columns[customer_type_trim]" />
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[total_sales]"
+                      cachedDataType="ui8"
+                      cachedName="total_sales"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[Total Sales]"
+                      lineageId="Package\DF_CONSOLIDADO\Cliente.Outputs[Aggregate Output 1].Columns[total_sales]" />
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[total_amount]"
+                      cachedDataType="numeric"
+                      cachedName="total_amount"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[Total Facturación]"
+                      lineageId="Package\DF_CONSOLIDADO\Cliente.Outputs[Aggregate Output 1].Columns[total_amount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[Tipo Cliente]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Tipo Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[Total Sales]"
+                      dataType="decimal"
+                      name="Total Sales" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[Total Facturación]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Total Facturación" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\DF_CONSOLIDADO\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\DF_CONSOLIDADO\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_CONSOLIDADO\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DF_CONSOLIDADO\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_CONSOLIDADO\Multicast.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\DF_CONSOLIDADO\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_CONSOLIDADO\Multicast.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\DF_CONSOLIDADO\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source - DB1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    TRIM('COSTA RICA') AS country_name_trim,
+    UPPER(TRIM(ISNULL(NULLIF(LTRIM(RTRIM(tc.nombre_tipo)), ''), 'UNKNOWN'))) AS customer_type_trim,
+    f.idfacturacion AS sale_id,
+    GETDATE() AS sale_date,
+    CAST(f.monto_facturacion AS NUMERIC(18,2)) AS sale_amount_num
+FROM facturacion f
+INNER JOIN cliente c ON f.idcliente = c.idcliente
+INNER JOIN tipo_clientes tc ON c.idtipocliente = tc.idtipocliente
+WHERE f.idfacturacion IS NOT NULL;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[OLEDB_Source_DB1]"
+                  connectionManagerRefId="Package.ConnectionManagers[OLEDB_Source_DB1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[sale_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].ExternalColumns[sale_id]"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[sale_id]"
+                      name="sale_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[sale_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].ExternalColumns[sale_date]"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[sale_date]"
+                      name="sale_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[country_name_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].ExternalColumns[country_name_trim]"
+                      length="10"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[country_name_trim]"
+                      name="country_name_trim"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[customer_type_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].ExternalColumns[customer_type_trim]"
+                      length="100"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[customer_type_trim]"
+                      name="customer_type_trim"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[sale_amount_num]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].ExternalColumns[sale_amount_num]"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[sale_amount_num]"
+                      name="sale_amount_num"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].ExternalColumns[sale_id]"
+                      dataType="i4"
+                      name="sale_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].ExternalColumns[sale_date]"
+                      dataType="dbTimeStamp"
+                      name="sale_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].ExternalColumns[country_name_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="country_name_trim" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].ExternalColumns[customer_type_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="customer_type_trim" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].ExternalColumns[sale_amount_num]"
+                      dataType="numeric"
+                      name="sale_amount_num"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[country_name_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[country_name_trim]"
+                      name="country_name_trim" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[customer_type_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[customer_type_trim]"
+                      name="customer_type_trim" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[sale_id]"
+                      dataType="i4"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[sale_id]"
+                      name="sale_id" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[sale_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[sale_date]"
+                      name="sale_date" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[sale_amount_num]"
+                      dataType="numeric"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[sale_amount_num]"
+                      name="sale_amount_num"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source - DB2"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    TRIM('GUATEMALA') AS country_name_trim,
+    UPPER(TRIM(ISNULL(NULLIF(LTRIM(RTRIM(tc.nombre_tipo)), ''), 'UNKNOWN'))) AS customer_type_trim,
+    f.idfacturacion AS sale_id,
+    GETDATE() AS sale_date,
+    CAST(f.monto_facturacion AS NUMERIC(18,2)) AS sale_amount_num
+FROM facturacion f
+INNER JOIN cliente c ON f.idcliente = c.idcliente
+INNER JOIN tipo_clientes tc ON c.idtipocliente = tc.idtipocliente
+WHERE f.idfacturacion IS NOT NULL;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[OLEDB_Source_DB2]"
+                  connectionManagerRefId="Package.ConnectionManagers[OLEDB_Source_DB2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[sale_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].ExternalColumns[sale_id]"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[sale_id]"
+                      name="sale_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[sale_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].ExternalColumns[sale_date]"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[sale_date]"
+                      name="sale_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[country_name_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].ExternalColumns[country_name_trim]"
+                      length="9"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[country_name_trim]"
+                      name="country_name_trim"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[customer_type_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].ExternalColumns[customer_type_trim]"
+                      length="100"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[customer_type_trim]"
+                      name="customer_type_trim"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[sale_amount_num]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].ExternalColumns[sale_amount_num]"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[sale_amount_num]"
+                      name="sale_amount_num"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].ExternalColumns[sale_id]"
+                      dataType="i4"
+                      name="sale_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].ExternalColumns[sale_date]"
+                      dataType="dbTimeStamp"
+                      name="sale_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].ExternalColumns[country_name_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="country_name_trim" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].ExternalColumns[customer_type_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="customer_type_trim" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].ExternalColumns[sale_amount_num]"
+                      dataType="numeric"
+                      name="sale_amount_num"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[country_name_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[country_name_trim]"
+                      name="country_name_trim" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[customer_type_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[customer_type_trim]"
+                      name="customer_type_trim" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[sale_id]"
+                      dataType="i4"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[sale_id]"
+                      name="sale_id" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[sale_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[sale_date]"
+                      name="sale_date" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[sale_amount_num]"
+                      dataType="numeric"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[sale_amount_num]"
+                      name="sale_amount_num"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source - DB3"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    TRIM('HONDURAS') AS country_name_trim,
+    UPPER(TRIM(ISNULL(NULLIF(LTRIM(RTRIM(tc.nombre_tipo)), ''), 'UNKNOWN'))) AS customer_type_trim,
+    f.idfacturacion AS sale_id,
+    GETDATE() AS sale_date,
+    CAST(f.monto_facturacion AS NUMERIC(18,2)) AS sale_amount_num
+FROM facturacion f
+INNER JOIN cliente c ON f.idcliente = c.idcliente
+INNER JOIN tipo_clientes tc ON c.idtipocliente = tc.idtipocliente
+WHERE f.idfacturacion IS NOT NULL;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[OLEDB_Source_DB3]"
+                  connectionManagerRefId="Package.ConnectionManagers[OLEDB_Source_DB3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[sale_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].ExternalColumns[sale_id]"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[sale_id]"
+                      name="sale_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[sale_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].ExternalColumns[sale_date]"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[sale_date]"
+                      name="sale_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[country_name_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].ExternalColumns[country_name_trim]"
+                      length="8"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[country_name_trim]"
+                      name="country_name_trim"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[customer_type_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].ExternalColumns[customer_type_trim]"
+                      length="100"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[customer_type_trim]"
+                      name="customer_type_trim"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[sale_amount_num]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].ExternalColumns[sale_amount_num]"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[sale_amount_num]"
+                      name="sale_amount_num"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].ExternalColumns[sale_id]"
+                      dataType="i4"
+                      name="sale_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].ExternalColumns[sale_date]"
+                      dataType="dbTimeStamp"
+                      name="sale_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].ExternalColumns[country_name_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="country_name_trim" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].ExternalColumns[customer_type_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="customer_type_trim" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].ExternalColumns[sale_amount_num]"
+                      dataType="numeric"
+                      name="sale_amount_num"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[country_name_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[country_name_trim]"
+                      name="country_name_trim" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[customer_type_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[customer_type_trim]"
+                      name="customer_type_trim" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[sale_id]"
+                      dataType="i4"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[sale_id]"
+                      name="sale_id" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[sale_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[sale_date]"
+                      name="sale_date" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[sale_amount_num]"
+                      dataType="numeric"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[sale_amount_num]"
+                      name="sale_amount_num"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_CONSOLIDADO\País"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="País"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF_CONSOLIDADO\País.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\País.Inputs[Aggregate Input 1].Columns[country_name_trim]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="country_name_trim"
+                      lineageId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[country_name_trim]" />
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\País.Inputs[Aggregate Input 1].Columns[sale_id]"
+                      cachedDataType="i4"
+                      cachedName="sale_id"
+                      lineageId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_id]" />
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\País.Inputs[Aggregate Input 1].Columns[sale_amount_num]"
+                      cachedDataType="numeric"
+                      cachedName="sale_amount_num"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_amount_num]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_CONSOLIDADO\País.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\País.Outputs[Aggregate Output 1].Columns[country_name_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF_CONSOLIDADO\País.Outputs[Aggregate Output 1].Columns[country_name_trim]"
+                      name="country_name_trim">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[country_name_trim]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\País.Outputs[Aggregate Output 1].Columns[total_sales]"
+                      dataType="ui8"
+                      lineageId="Package\DF_CONSOLIDADO\País.Outputs[Aggregate Output 1].Columns[total_sales]"
+                      name="total_sales">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\País.Outputs[Aggregate Output 1].Columns[total_amount]"
+                      dataType="numeric"
+                      lineageId="Package\DF_CONSOLIDADO\País.Outputs[Aggregate Output 1].Columns[total_amount]"
+                      name="total_amount"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_amount_num]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_CONSOLIDADO\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 1].Columns[sale_id]"
+                      cachedDataType="i4"
+                      cachedName="sale_id"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[sale_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 1].Columns[sale_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="sale_date"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[sale_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 1].Columns[country_name_trim]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="country_name_trim"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[country_name_trim]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[country_name_trim]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 1].Columns[customer_type_trim]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="customer_type_trim"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[customer_type_trim]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[customer_type_trim]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 1].Columns[sale_amount_num]"
+                      cachedDataType="numeric"
+                      cachedName="sale_amount_num"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output].Columns[sale_amount_num]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_amount_num]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 2].Columns[sale_id]"
+                      cachedDataType="i4"
+                      cachedName="sale_id"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[sale_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 2].Columns[sale_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="sale_date"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[sale_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 2].Columns[country_name_trim]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="country_name_trim"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[country_name_trim]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[country_name_trim]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 2].Columns[customer_type_trim]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="customer_type_trim"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[customer_type_trim]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[customer_type_trim]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 2].Columns[sale_amount_num]"
+                      cachedDataType="numeric"
+                      cachedName="sale_amount_num"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output].Columns[sale_amount_num]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_amount_num]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 3].Columns[sale_id]"
+                      cachedDataType="i4"
+                      cachedName="sale_id"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[sale_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 3].Columns[sale_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="sale_date"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[sale_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 3].Columns[country_name_trim]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="country_name_trim"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[country_name_trim]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[country_name_trim]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 3].Columns[customer_type_trim]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="customer_type_trim"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[customer_type_trim]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[customer_type_trim]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 3].Columns[sale_amount_num]"
+                      cachedDataType="numeric"
+                      cachedName="sale_amount_num"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output].Columns[sale_amount_num]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_amount_num]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_id]"
+                      dataType="i4"
+                      lineageId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_id]"
+                      name="sale_id" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_date]"
+                      name="sale_date" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[country_name_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[country_name_trim]"
+                      name="country_name_trim" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[customer_type_trim]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[customer_type_trim]"
+                      name="customer_type_trim" />
+                    <outputColumn
+                      refId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_amount_num]"
+                      dataType="numeric"
+                      lineageId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1].Columns[sale_amount_num]"
+                      name="sale_amount_num"
+                      precision="18"
+                      scale="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF_CONSOLIDADO.Paths[Aggregate Output 1]"
+              endId="Package\DF_CONSOLIDADO\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\DF_CONSOLIDADO\País.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\DF_CONSOLIDADO.Paths[Aggregate Output 11]"
+              endId="Package\DF_CONSOLIDADO\Flat File Destination 1.Inputs[Flat File Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\DF_CONSOLIDADO\Cliente.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\DF_CONSOLIDADO.Paths[Multicast Output 1]"
+              endId="Package\DF_CONSOLIDADO\País.Inputs[Aggregate Input 1]"
+              name="Multicast Output 1"
+              startId="Package\DF_CONSOLIDADO\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\DF_CONSOLIDADO.Paths[Multicast Output 2]"
+              endId="Package\DF_CONSOLIDADO\Cliente.Inputs[Aggregate Input 1]"
+              name="Multicast Output 2"
+              startId="Package\DF_CONSOLIDADO\Multicast.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\DF_CONSOLIDADO.Paths[OLE DB Source Output]"
+              endId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\DF_CONSOLIDADO\OLE DB Source - DB1.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DF_CONSOLIDADO.Paths[OLE DB Source Output1]"
+              endId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Source Output"
+              startId="Package\DF_CONSOLIDADO\OLE DB Source - DB2.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DF_CONSOLIDADO.Paths[OLE DB Source Output2]"
+              endId="Package\DF_CONSOLIDADO\Union All.Inputs[Union All Input 3]"
+              name="OLE DB Source Output"
+              startId="Package\DF_CONSOLIDADO\OLE DB Source - DB3.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DF_CONSOLIDADO.Paths[Union All Output 1]"
+              endId="Package\DF_CONSOLIDADO\Multicast.Inputs[Multicast Input 1]"
+              name="Union All Output 1"
+              startId="Package\DF_CONSOLIDADO\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\DF_CONSOLIDADO"
+          TopLeft="185.000000393816,60.4117646529291" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF_CONSOLIDADO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\DF_CONSOLIDADO\OLE DB Source - DB1"
+          TopLeft="29.2857143480558,39.7647058474976" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\DF_CONSOLIDADO\OLE DB Source - DB2"
+          TopLeft="212.142857594454,38.999999965815" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\DF_CONSOLIDADO\OLE DB Source - DB3"
+          TopLeft="402.142857998914,39.7647058474976" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\DF_CONSOLIDADO\Union All"
+          TopLeft="229.285714773803,140.223529294463" />
+        <EdgeLayout
+          Id="Package\DF_CONSOLIDADO.Paths[OLE DB Source Output]"
+          TopLeft="118.885714348056,81.3647058474976">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170.400000425748,58.8588234469655"
+              Start="0,0"
+              End="170.400000425748,51.3588234469655">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.4294117234828" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.4294117234828"
+                    Point2="0,29.4294117234828"
+                    Point3="4,29.4294117234828" />
+                  <mssgle:LineSegment
+                    End="166.400000425748,29.4294117234828" />
+                  <mssgle:CubicBezierSegment
+                    Point1="166.400000425748,29.4294117234828"
+                    Point2="170.400000425748,29.4294117234828"
+                    Point3="170.400000425748,33.4294117234828" />
+                  <mssgle:LineSegment
+                    End="170.400000425748,51.3588234469655" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_CONSOLIDADO.Paths[OLE DB Source Output1]"
+          TopLeft="304.847619517462,80.599999965815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.6235293286481"
+              Start="0,0"
+              End="0,52.1235293286481">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.1235293286481" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_CONSOLIDADO.Paths[OLE DB Source Output2]"
+          TopLeft="491.742857998914,81.3647058474976">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-174.457143225111,58.8588234469655"
+              Start="0,0"
+              End="-174.457143225111,51.3588234469655">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.3861892045427" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.3861892045427"
+                    Point2="0,38.3861892045427"
+                    Point3="-4,38.3861892045427" />
+                  <mssgle:LineSegment
+                    End="-170.457143225111,38.3861892045427" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-170.457143225111,38.3861892045427"
+                    Point2="-174.457143225111,38.3861892045427"
+                    Point3="-174.457143225111,42.3861892045427" />
+                  <mssgle:LineSegment
+                    End="-174.457143225111,51.3588234469655" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\DF_CONSOLIDADO\Multicast"
+          TopLeft="233.571429068641,211.05882334441" />
+        <EdgeLayout
+          Id="Package\DF_CONSOLIDADO.Paths[Union All Output 1]"
+          TopLeft="291.428571921222,181.823529294463">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.2352940499473"
+              Start="0,0"
+              End="0,21.7352940499473">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7352940499473" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="96.8,41.6"
+          Id="Package\DF_CONSOLIDADO\País"
+          TopLeft="105.714285939324,246.999999783495" />
+        <EdgeLayout
+          Id="Package\DF_CONSOLIDADO.Paths[Multicast Output 1]"
+          TopLeft="233.571429068641,231.85882334441">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-31.0571431293172,35.9411764390845"
+              Start="0,0"
+              End="-23.5571431293172,35.9411764390845">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-11.5285715646586,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.5285715646586,0"
+                    Point2="-15.5285715646586,0"
+                    Point3="-15.5285715646586,4" />
+                  <mssgle:LineSegment
+                    End="-15.5285715646586,31.9411764390845" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.5285715646586,31.9411764390845"
+                    Point2="-15.5285715646586,35.9411764390845"
+                    Point3="-19.5285715646586,35.9411764390845" />
+                  <mssgle:LineSegment
+                    End="-23.5571431293172,35.9411764390845" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="110.4,41.6"
+          Id="Package\DF_CONSOLIDADO\Cliente"
+          TopLeft="374.28571508247,251.317646848351" />
+        <EdgeLayout
+          Id="Package\DF_CONSOLIDADO.Paths[Multicast Output 2]"
+          TopLeft="353.571429068641,228.817646848351">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75.9142860138294,22.5"
+              Start="0,0"
+              End="75.9142860138294,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.9142860138294,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.9142860138294,0"
+                    Point2="75.9142860138294,0"
+                    Point3="75.9142860138294,4" />
+                  <mssgle:LineSegment
+                    End="75.9142860138294,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\DF_CONSOLIDADO\Flat File Destination"
+          TopLeft="61.4285715593367,320.564705665178" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\DF_CONSOLIDADO\Flat File Destination 1"
+          TopLeft="364.285715061183,317.788235084986" />
+        <EdgeLayout
+          Id="Package\DF_CONSOLIDADO.Paths[Aggregate Output 1]"
+          TopLeft="150.57142874933,288.599999783495">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.9647058816826"
+              Start="0,0"
+              End="0,24.4647058816826">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4647058816826" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_CONSOLIDADO.Paths[Aggregate Output 11]"
+          TopLeft="429.48571508247,292.917646848351">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.7999999787128,24.8705882366348"
+              Start="0,0"
+              End="24.7999999787128,17.3705882366348">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.43529411831739" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.43529411831739"
+                    Point2="0,12.4352941183174"
+                    Point3="4,12.4352941183174" />
+                  <mssgle:LineSegment
+                    End="20.7999999787128,12.4352941183174" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.7999999787128,12.4352941183174"
+                    Point2="24.7999999787128,12.4352941183174"
+                    Point3="24.7999999787128,16.4352941183174" />
+                  <mssgle:LineSegment
+                    End="24.7999999787128,17.3705882366348" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_CONSOLIDADO\OLE DB Source - DB1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_CONSOLIDADO\OLE DB Source - DB2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_CONSOLIDADO\OLE DB Source - DB3">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
